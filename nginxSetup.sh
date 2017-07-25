@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 htmlRoot='/var/www/'
 logRoot='/var/log/'
 sitesAvailable='/etc/nginx/sites-available/'
@@ -35,6 +36,8 @@ if [ "$(ls /usr/sbin | grep nginx)" = "nginx" ]; then
 fi
 
 apt-get install -y nginx
+
+update-rc.d nginx defaults
 
 echo 'server {
     server_name example.com www.example.com;
